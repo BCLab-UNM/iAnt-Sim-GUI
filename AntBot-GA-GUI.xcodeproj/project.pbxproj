@@ -385,6 +385,7 @@
 				407FC7CE16F100D50051E770 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
