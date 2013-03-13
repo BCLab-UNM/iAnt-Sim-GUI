@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'AntBot-GA-GUI' target in the 'AntBot-GA-GUI' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
