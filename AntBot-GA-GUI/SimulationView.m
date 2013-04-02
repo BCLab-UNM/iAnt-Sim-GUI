@@ -56,7 +56,7 @@
         [path stroke];
     }
     
-    for(Robot* robot in robots) {
+    for(Robot* robot in [robots copy]) {
         NSRect rect = NSMakeRect((robot.position.x/90.f)*w,(robot.position.y/90.f)*h,cellWidth, cellHeight);
         NSBezierPath* path = [NSBezierPath bezierPathWithOvalInRect:rect];
         
@@ -69,7 +69,7 @@
         [path stroke];
     }
 
-    for(Tag* tag in tags) {
+    for(Tag* tag in [tags copy]) {
         NSRect rect = NSMakeRect((tag.x/90.f)*w + (cellWidth*.25),(tag.y/90.f)*h + (cellWidth*.25),cellWidth*.5, cellHeight*.5);
         NSBezierPath* path = [NSBezierPath bezierPathWithOvalInRect:rect];
         
@@ -82,7 +82,7 @@
         [path stroke];
     }
     
-    for(Pheromone2* pheromone in pheromones) {
+    for(Pheromone2* pheromone in [pheromones copy]) {
         [[NSColor colorWithCalibratedRed:0. green:.6 blue:0. alpha:1.] set];
         NSBezierPath* path = [NSBezierPath bezierPath];
         [path setLineWidth:3*pheromone.n];
@@ -93,7 +93,7 @@
 }
 
 -(void) updateRobots:(NSMutableArray*)_robots tags:(NSMutableArray*)_tags pheromones:(NSMutableArray*)_pheromones {
-    robots = [NSMutableArray arrayWithArray:_robots];
+    robots = _robots;
     tags = _tags;
     pheromones = _pheromones;
     [self setNeedsDisplay:YES];
