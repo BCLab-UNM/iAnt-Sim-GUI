@@ -68,20 +68,7 @@
         [[NSColor whiteColor] set];
         [path stroke];
     }
-    
-    /*for(Ant* ant in ants){
-        NSRect rect = NSMakeRect((ant.target.x/90.f)*self.frame.size.width-2,(ant.target.y/90.f)*self.frame.size.height-2,4,4);
-        NSBezierPath* path = [NSBezierPath bezierPathWithOvalInRect:rect];
-        
-        if(ant.carrying != nil){[[NSColor greenColor] set];}
-        else if(ant.status == ANT_STATUS_DEPARTING){[[NSColor redColor] set];}
-        else if(ant.status == ANT_STATUS_SEARCHING){[[NSColor purpleColor] set];}
-        else if(ant.status == ANT_STATUS_RETURNING){[[NSColor orangeColor] set];}
-        [path fill];
-        [[NSColor whiteColor] set];
-        [path stroke];
-    }*/
-    
+
     for(Tag* tag in tags) {
         NSRect rect = NSMakeRect((tag.x/90.f)*w + (cellWidth*.25),(tag.y/90.f)*h + (cellWidth*.25),cellWidth*.5, cellHeight*.5);
         NSBezierPath* path = [NSBezierPath bezierPathWithOvalInRect:rect];
@@ -111,8 +98,6 @@
     pheromones = _pheromones;
     [self setNeedsDisplay:YES];
 }
-
--(void) updateAnts:(NSMutableArray*)ants {}
 
 -(void) magnifyWithEvent:(NSEvent*) event {
     double m = [event magnification];
