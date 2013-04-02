@@ -14,7 +14,7 @@
 
 @implementation SimulationView
 
-@synthesize ants, tags, pheromones;
+@synthesize robots, tags, pheromones;
 
 -(void) awakeFromNib {
     [self translateOriginToPoint:NSMakePoint(0,0)];
@@ -56,14 +56,14 @@
         [path stroke];
     }
     
-    for(Ant* ant in ants) {
-        NSRect rect = NSMakeRect((ant.position.x/90.f)*w,(ant.position.y/90.f)*h,cellWidth, cellHeight);
+    for(Robot* robot in robots) {
+        NSRect rect = NSMakeRect((robot.position.x/90.f)*w,(robot.position.y/90.f)*h,cellWidth, cellHeight);
         NSBezierPath* path = [NSBezierPath bezierPathWithOvalInRect:rect];
         
-        if(ant.carrying != nil){[[NSColor greenColor] set];}
-        else if(ant.status == ANT_STATUS_DEPARTING){[[NSColor redColor] set];}
-        else if(ant.status == ANT_STATUS_SEARCHING){[[NSColor purpleColor] set];}
-        else if(ant.status == ANT_STATUS_RETURNING){[[NSColor orangeColor] set];}
+        if(robot.carrying != nil){[[NSColor greenColor] set];}
+        else if(robot.status == ROBOT_STATUS_DEPARTING){[[NSColor redColor] set];}
+        else if(robot.status == ROBOT_STATUS_SEARCHING){[[NSColor purpleColor] set];}
+        else if(robot.status == ROBOT_STATUS_RETURNING){[[NSColor orangeColor] set];}
         [path fill];
         [[NSColor whiteColor] set];
         [path stroke];
@@ -105,8 +105,8 @@
     }
 }
 
--(void) updateAnts:(NSMutableArray*)_ants tags:(NSMutableArray*)_tags pheromones:(NSMutableArray*)_pheromones {
-    ants = [NSMutableArray arrayWithArray:_ants];
+-(void) updateRobots:(NSMutableArray*)_robots tags:(NSMutableArray*)_tags pheromones:(NSMutableArray*)_pheromones {
+    robots = [NSMutableArray arrayWithArray:_robots];
     tags = _tags;
     pheromones = _pheromones;
     [self setNeedsDisplay:YES];

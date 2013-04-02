@@ -5,9 +5,9 @@
 
 @interface SimulationView : NSView {}
 
--(void) updateAnts:(NSMutableArray*)_ants tags:(NSMutableArray*)_tags pheromones:(NSMutableArray*)_pheromones;
+-(void) updateRobots:(NSMutableArray*)_robots tags:(NSMutableArray*)_tags pheromones:(NSMutableArray*)_pheromones;
 
-@property (nonatomic) NSMutableArray* ants;
+@property (nonatomic) NSMutableArray* robots;
 @property (nonatomic) NSMutableArray* tags;
 @property (nonatomic) NSMutableArray* pheromones;
 
