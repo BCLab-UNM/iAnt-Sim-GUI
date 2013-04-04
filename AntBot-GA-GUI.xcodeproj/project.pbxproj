@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		407FC7B316F100D50051E770 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407FC7B216F100D50051E770 /* Cocoa.framework */; };
-		407FC7DD16F1010F0051E770 /* AntBot-GA-GUI-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 407FC7CF16F1010F0051E770 /* AntBot-GA-GUI-Info.plist */; };
 		407FC7DE16F1010F0051E770 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 407FC7D216F1010F0051E770 /* AppDelegate.m */; };
 		407FC7DF16F1010F0051E770 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 407FC7D416F1010F0051E770 /* Credits.rtf */; };
-		407FC7E016F1010F0051E770 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 407FC7D616F1010F0051E770 /* InfoPlist.strings */; };
 		407FC7E116F1010F0051E770 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 407FC7D816F1010F0051E770 /* MainMenu.xib */; };
 		407FC7E316F1010F0051E770 /* SimulationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 407FC7DC16F1010F0051E770 /* SimulationView.m */; };
 		407FC7EF16F1019D0051E770 /* libAntBot-GA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 407FC7EC16F1018E0051E770 /* libAntBot-GA.a */; };
@@ -172,7 +170,7 @@
 		407FC7A516F100D50051E770 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = AntBot;
 			};
 			buildConfigurationList = 407FC7A816F100D50051E770 /* Build configuration list for PBXProject "AntBot-GA-GUI" */;
@@ -213,9 +211,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				407FC7DD16F1010F0051E770 /* AntBot-GA-GUI-Info.plist in Resources */,
 				407FC7DF16F1010F0051E770 /* Credits.rtf in Resources */,
-				407FC7E016F1010F0051E770 /* InfoPlist.strings in Resources */,
 				407FC7E116F1010F0051E770 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +337,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/AntBot-GA\"";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -362,6 +359,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/AntBot-GA\"";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
