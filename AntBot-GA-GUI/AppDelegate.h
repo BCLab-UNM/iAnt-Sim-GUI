@@ -1,4 +1,5 @@
 #import <Cocoa/Cocoa.h>
+#import <AntBot-GA/GA.h>
 
 @class SimulationView;
 

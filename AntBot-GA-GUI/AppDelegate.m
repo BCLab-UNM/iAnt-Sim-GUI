@@ -1,5 +1,4 @@
 #import "AppDelegate.h"
-#import "AntBot-GA/GA.h"
 
 NSString *FILE_PATH = @"~/Dropbox/School/Research/AntBot/Data/GA evolved parameters";
 int NUM_ITERATIONS = 10;
