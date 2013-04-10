@@ -26,8 +26,6 @@ int NUM_ITERATIONS = 10;
     
     [simulation setRandomizeParameters:TRUE];
     
-    [simulation setTagFractionCutoff:1.];
-    
     [simulation setDelegate:self];
     [simulation setTickRate:.005f];
     [simulation setViewDelegate:(NSObject*)simView];
