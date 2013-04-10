@@ -24,13 +24,14 @@ int NUM_ITERATIONS = 10;
     [simulation setPositionalError:0.f];
     [simulation setDetectionError:0.f];
     
+    [simulation setFixedStepSize:TRUE];
+    
     [simulation setRandomizeParameters:TRUE];
+    [simulation setParameterFile:[NSString stringWithFormat:@"%@/parameters.csv",[FILE_PATH stringByExpandingTildeInPath]]];
     
     [simulation setDelegate:self];
     [simulation setTickRate:.005f];
     [simulation setViewDelegate:(NSObject*)simView];
-    
-    [simulation setParameterFile:[NSString stringWithFormat:@"%@/parameters.csv",[FILE_PATH stringByExpandingTildeInPath]]];
     
     dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
     dispatch_async(queue, ^{
