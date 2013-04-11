@@ -21,8 +21,7 @@ int NUM_ITERATIONS = 10;
     [simulation setDistributionPowerlaw:1.];
     [simulation setDistributionRandom:0.];
     
-    [simulation setPositionalError:0.f];
-    [simulation setDetectionError:0.f];
+    [simulation setRealWorldError:FALSE];
     
     [simulation setFixedStepSize:TRUE];
     
