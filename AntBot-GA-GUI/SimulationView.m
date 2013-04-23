@@ -70,16 +70,18 @@
     }
 
     for(Tag* tag in [tags copy]) {
-        NSRect rect = NSMakeRect((tag.x/90.f)*w + (cellWidth*.25),(tag.y/90.f)*h + (cellWidth*.25),cellWidth*.5, cellHeight*.5);
-        NSBezierPath* path = [NSBezierPath bezierPathWithOvalInRect:rect];
-        
-        if(tag.pickedUp){[[NSColor blackColor] set];}
-        else{[[NSColor whiteColor] set];}
-        [path setLineWidth:2];
-        [path fill];
-        [path setLineWidth:1];
-        [[NSColor darkGrayColor] set];
-        [path stroke];
+        if (![tag isKindOfClass:[NSNull class]]) {
+            NSRect rect = NSMakeRect((tag.x/90.f)*w + (cellWidth*.25),(tag.y/90.f)*h + (cellWidth*.25),cellWidth*.5, cellHeight*.5);
+            NSBezierPath* path = [NSBezierPath bezierPathWithOvalInRect:rect];
+            
+            if(tag.pickedUp){[[NSColor blackColor] set];}
+            else{[[NSColor whiteColor] set];}
+            [path setLineWidth:2];
+            [path fill];
+            [path setLineWidth:1];
+            [[NSColor darkGrayColor] set];
+            [path stroke];
+        }
     }
     
     for(Pheromone2* pheromone in [pheromones copy]) {
@@ -92,7 +94,7 @@
     }
 }
 
--(void) updateRobots:(NSMutableArray*)_robots tags:(NSMutableArray*)_tags pheromones:(NSMutableArray*)_pheromones {
+-(void) updateDisplayWindowWithRobots:(NSMutableArray*)_robots tags:(Array2D*)_tags pheromones:(NSMutableArray*)_pheromones {
     robots = _robots;
     tags = _tags;
     pheromones = _pheromones;
