@@ -1,20 +1,9 @@
 #import "SimulationView.h"
 #import "AntBot-GA/GA.h"
 
-@interface Pheromone2 : NSObject {}
-@property (nonatomic) int x;
-@property (nonatomic) int y;
-@property (nonatomic) float n;
-@property (nonatomic) int updated;
-@end
-
-@implementation Pheromone2
-@synthesize x,y,n,updated;
-@end
-
 @implementation SimulationView
 
-@synthesize robots, tags, pheromones;
+@synthesize robots, team, tags, pheromones;
 
 -(void) awakeFromNib {
     [self translateOriginToPoint:NSMakePoint(0,0)];
@@ -23,8 +12,8 @@
 -(void) drawRect:(NSRect)dirtyRect {
     float w = self.frame.size.width,
           h = self.frame.size.height;
-    float cellWidth = (1/90.f) * w,
-          cellHeight = (1/90.f) * h;
+    float cellWidth = (1./gridWidth) * w,
+          cellHeight = (1./gridHeight) * h;
     
     //Clear background.
     [[NSColor blackColor] set];
@@ -39,25 +28,25 @@
     [[NSColor whiteColor] set];
     [path stroke];
     
-    for(float i = 0; i < 90; i++) {
+    for(float i = 0; i < gridWidth; i++) {
         [[NSColor grayColor] set];
         NSBezierPath* path = [NSBezierPath bezierPath];
         [path setLineWidth:.5];
-        [path moveToPoint:NSMakePoint(roundf((i/90.)*self.frame.size.width),0)];
-        [path lineToPoint:NSMakePoint(roundf((i/90.)*self.frame.size.width),h)];
+        [path moveToPoint:NSMakePoint(roundf((i/gridWidth)*self.frame.size.width),0)];
+        [path lineToPoint:NSMakePoint(roundf((i/gridWidth)*self.frame.size.width),h)];
         [path stroke];
     }
-    for(float i = 0; i < 90; i++) {
+    for(float i = 0; i < gridHeight; i++) {
         [[NSColor grayColor] set];
         NSBezierPath* path = [NSBezierPath bezierPath];
         [path setLineWidth:.5];
-        [path moveToPoint:NSMakePoint(0,roundf((i/90.)*self.frame.size.height))];
-        [path lineToPoint:NSMakePoint(w,roundf((i/90.)*self.frame.size.height))];
+        [path moveToPoint:NSMakePoint(0,roundf((i/gridHeight)*self.frame.size.height))];
+        [path lineToPoint:NSMakePoint(w,roundf((i/gridHeight)*self.frame.size.height))];
         [path stroke];
     }
     
     for(Robot* robot in [robots copy]) {
-        NSRect rect = NSMakeRect((robot.position.x/90.f)*w,(robot.position.y/90.f)*h,cellWidth, cellHeight);
+        NSRect rect = NSMakeRect((robot.position.x/gridWidth)*w,(robot.position.y/gridHeight)*h,cellWidth, cellHeight);
         NSBezierPath* path = [NSBezierPath bezierPathWithOvalInRect:rect];
         
         if(robot.carrying != nil){[[NSColor greenColor] set];}
@@ -67,11 +56,19 @@
         [path fill];
         [[NSColor whiteColor] set];
         [path stroke];
+        
+        if (robot.recruitmentTarget.x > 0) {
+            float range = exponentialDecay(wirelessRange, robot.searchTime, team.informedSearchCorrelationDecayRate);
+            rect = NSMakeRect(((robot.position.x - range/2)/gridWidth)*w, ((robot.position.y - range/2)/gridHeight)*h, range*cellWidth, range*cellHeight);
+            path = [NSBezierPath bezierPathWithOvalInRect:rect];
+            [[NSColor colorWithCalibratedRed:0. green:.5 blue:1. alpha:1.] set];
+            [path stroke];
+        }
     }
 
     for(Tag* tag in [tags copy]) {
         if (![tag isKindOfClass:[NSNull class]]) {
-            NSRect rect = NSMakeRect((tag.x/90.f)*w + (cellWidth*.25),(tag.y/90.f)*h + (cellWidth*.25),cellWidth*.5, cellHeight*.5);
+            NSRect rect = NSMakeRect(((float)tag.x/gridWidth)*w + (cellWidth*.25),((float)tag.y/gridHeight)*h + (cellWidth*.25),cellWidth*.5, cellHeight*.5);
             NSBezierPath* path = [NSBezierPath bezierPathWithOvalInRect:rect];
             
             if(tag.pickedUp){[[NSColor blackColor] set];}
@@ -84,18 +81,19 @@
         }
     }
     
-    for(Pheromone2* pheromone in [pheromones copy]) {
+    for(Pheromone* pheromone in [pheromones copy]) {
         [[NSColor colorWithCalibratedRed:0. green:.6 blue:0. alpha:1.] set];
         NSBezierPath* path = [NSBezierPath bezierPath];
         [path setLineWidth:3*pheromone.n];
         [path moveToPoint:NSMakePoint(w/2,h/2)];
-        [path lineToPoint:NSMakePoint((pheromone.x/90.f)*w,(pheromone.y/90.f)*h)];
+        [path lineToPoint:NSMakePoint(((float)pheromone.x/gridWidth)*w,((float)pheromone.y/gridHeight)*h)];
         [path stroke];
     }
 }
 
--(void) updateDisplayWindowWithRobots:(NSMutableArray*)_robots tags:(Array2D*)_tags pheromones:(NSMutableArray*)_pheromones {
+-(void) updateDisplayWindowWithRobots:(NSMutableArray*)_robots team:(Team*)_team tags:(Array2D*)_tags pheromones:(NSMutableArray*)_pheromones {
     robots = _robots;
+    team = _team;
     tags = _tags;
     pheromones = _pheromones;
     [self setNeedsDisplay:YES];
