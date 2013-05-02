@@ -19,8 +19,8 @@
     [[NSColor blackColor] set];
     NSRectFill(dirtyRect);
     
-    //Draw Nest.
-    NSRect rect = NSMakeRect(w/2 - cellWidth,h/2 - cellHeight, cellWidth * 2, cellHeight * 2);
+    //Draw Nest as white circle with diameter of 3 centered at (nestX, nestY)
+    NSRect rect = NSMakeRect((nestX * cellWidth) - cellWidth,(nestY * cellHeight) - cellHeight, cellWidth * 3, cellHeight * 3);
     NSBezierPath* path = [NSBezierPath bezierPathWithOvalInRect:rect];
     
     [[NSColor blackColor] set];
@@ -85,7 +85,7 @@
         [[NSColor colorWithCalibratedRed:0. green:.6 blue:0. alpha:1.] set];
         NSBezierPath* path = [NSBezierPath bezierPath];
         [path setLineWidth:3*pheromone.n];
-        [path moveToPoint:NSMakePoint(w/2,h/2)];
+        [path moveToPoint:NSMakePoint(nestX * cellWidth, nestY * cellHeight)];
         [path lineToPoint:NSMakePoint(((float)pheromone.x/gridWidth)*w,((float)pheromone.y/gridHeight)*h)];
         [path stroke];
     }
