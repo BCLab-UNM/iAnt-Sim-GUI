@@ -9,6 +9,19 @@
     [self translateOriginToPoint:NSMakePoint(0,0)];
 }
 
+-(void) redraw {
+    if(drawTimer == nil) {
+        drawTimer = [NSTimer timerWithTimeInterval:.016f target:self selector:@selector(drawTimerDidFire:) userInfo:nil repeats:NO];
+        [[NSRunLoop mainRunLoop] addTimer:drawTimer forMode:NSDefaultRunLoopMode];
+    }
+}
+
+-(void) drawTimerDidFire:(NSTimer*)timer {
+    [drawTimer invalidate];
+    drawTimer = nil;
+    [self setNeedsDisplay:YES];
+}
+
 -(void) drawRect:(NSRect)dirtyRect {
     float w = self.frame.size.width,
           h = self.frame.size.height;
@@ -45,7 +58,7 @@
         [path stroke];
     }
     
-    for(Robot* robot in [robots copy]) {
+    for(Robot* robot in robots) {
         NSRect rect = NSMakeRect((robot.position.x/gridWidth)*w,(robot.position.y/gridHeight)*h,cellWidth, cellHeight);
         NSBezierPath* path = [NSBezierPath bezierPathWithOvalInRect:rect];
         
@@ -66,7 +79,7 @@
         }
     }
 
-    for(Tag* tag in [tags copy]) {
+    for(Tag* tag in tags) {
         if (![tag isKindOfClass:[NSNull class]]) {
             NSRect rect = NSMakeRect(((float)tag.x/gridWidth)*w + (cellWidth*.25),((float)tag.y/gridHeight)*h + (cellWidth*.25),cellWidth*.5, cellHeight*.5);
             NSBezierPath* path = [NSBezierPath bezierPathWithOvalInRect:rect];
@@ -81,7 +94,7 @@
         }
     }
     
-    for(Pheromone* pheromone in [pheromones copy]) {
+    for(Pheromone* pheromone in pheromones) {
         [[NSColor colorWithCalibratedRed:0. green:.6 blue:0. alpha:1.] set];
         NSBezierPath* path = [NSBezierPath bezierPath];
         [path setLineWidth:3*pheromone.n];
@@ -96,17 +109,7 @@
     team = _team;
     tags = _tags;
     pheromones = _pheromones;
-    [self setNeedsDisplay:YES];
-}
-
--(void) magnifyWithEvent:(NSEvent*) event {
-    double m = [event magnification];
-    if(m > 0) {
-        self.frame = NSMakeRect(self.frame.origin.x + 100, self.frame.origin.y + 100, self.frame.size.width - 200, self.frame.size.height - 200);
-    }
-    else {
-        self.frame = NSMakeRect(self.frame.origin.x - 100, self.frame.origin.y - 100, self.frame.size.width + 200, self.frame.size.height + 200);
-    }
+    [self redraw];
 }
 
 @end
