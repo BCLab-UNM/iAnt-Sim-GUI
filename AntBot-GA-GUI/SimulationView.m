@@ -72,6 +72,7 @@
             NSBezierPath* path = [NSBezierPath bezierPathWithOvalInRect:rect];
             
             if(tag.pickedUp){[[NSColor blackColor] set];}
+            else if([tag discovered]){[[NSColor magentaColor] set];}
             else{[[NSColor whiteColor] set];}
             [path setLineWidth:2];
             [path fill];
@@ -88,7 +89,12 @@
         [path moveToPoint:NSMakePoint(nestX * cellWidth, nestY * cellHeight)];
         [path lineToPoint:NSMakePoint(((float)pheromone.x/gridWidth)*w,((float)pheromone.y/gridHeight)*h)];
         [path stroke];
-    }
+//        float range = 10;
+//        NSRect rect = NSMakeRect(((pheromone.x - range/2)/gridWidth)*w, ((pheromone.y - range/2)/gridHeight)*h, range*cellWidth, range*cellHeight);
+//        path = [NSBezierPath bezierPathWithOvalInRect:rect];
+//        [[NSColor colorWithCalibratedRed:0. green:.5 blue:1. alpha:1.] set];
+//        [path stroke];
+   }
 }
 
 -(void) updateDisplayWindowWithRobots:(NSMutableArray*)_robots team:(Team*)_team tags:(Array2D*)_tags pheromones:(NSMutableArray*)_pheromones {
