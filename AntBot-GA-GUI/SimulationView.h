@@ -3,9 +3,12 @@
 
 @class Tag;
 
-@interface SimulationView : NSView {}
+@interface SimulationView : NSView {
+    NSTimer* drawTimer;
+}
 
 -(void) updateDisplayWindowWithRobots:(NSMutableArray*)_robots team:(Team*)_team tags:(Array2D*)_tags pheromones:(NSMutableArray*)_pheromones;
+-(void) redraw;
 
 @property (nonatomic) NSMutableArray* robots;
 @property (nonatomic) Team* team;
