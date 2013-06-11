@@ -1,4 +1,5 @@
 #import "AppDelegate.h"
+#import "SimulationView.h"
 
 NSString *FILE_PATH = @"~/Desktop";
 int NUM_ITERATIONS = 10;
@@ -10,6 +11,8 @@ int NUM_ITERATIONS = 10;
 -(void) applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     Simulation* simulation = [[Simulation alloc] init];
+    
+    [simView setSimulation:simulation];
     
     [simulation setRobotCount:6];
     [simulation setTeamCount:100];
@@ -29,7 +32,6 @@ int NUM_ITERATIONS = 10;
     
     [simulation setDecentralizedPheromones:FALSE];
     
-    [simulation setRandomizeParameters:TRUE];
     [simulation setParameterFile:[NSString stringWithFormat:@"%@/parameters.csv",[FILE_PATH stringByExpandingTildeInPath]]];
     
     [simulation setDelegate:self];

@@ -3,7 +3,7 @@
 
 @implementation SimulationView
 
-@synthesize robots, team, tags, pheromones;
+@synthesize simulation, robots, team, tags, pheromones;
 
 -(void) awakeFromNib {
     [self translateOriginToPoint:NSMakePoint(0,0)];
@@ -25,15 +25,16 @@
 -(void) drawRect:(NSRect)dirtyRect {
     float w = self.frame.size.width,
           h = self.frame.size.height;
-    float cellWidth = (1./gridWidth) * w,
-          cellHeight = (1./gridHeight) * h;
-    
+    NSSize grid = simulation.gridSize;
+    float cellWidth = (1./grid.width) * w,
+          cellHeight = (1./grid.height) * h;
+
     //Clear background.
     [[NSColor blackColor] set];
     NSRectFill(dirtyRect);
     
-    //Draw Nest as white circle with diameter of 3 centered at (nestX, nestY)
-    NSRect rect = NSMakeRect((nestX * cellWidth) - cellWidth,(nestY * cellHeight) - cellHeight, cellWidth * 3, cellHeight * 3);
+    //Draw Nest as white circle with diameter of 3 centered at nest
+    NSRect rect = NSMakeRect((simulation.nest.x * cellWidth) - cellWidth, (simulation.nest.y * cellHeight) - cellHeight, cellWidth * 3, cellHeight * 3);
     NSBezierPath* path = [NSBezierPath bezierPathWithOvalInRect:rect];
     
     [[NSColor blackColor] set];
@@ -41,25 +42,25 @@
     [[NSColor whiteColor] set];
     [path stroke];
     
-    for(float i = 0; i < gridWidth; i++) {
+    for(float i = 0; i < grid.width; i++) {
         [[NSColor grayColor] set];
         NSBezierPath* path = [NSBezierPath bezierPath];
         [path setLineWidth:.5];
-        [path moveToPoint:NSMakePoint(roundf((i/gridWidth)*self.frame.size.width),0)];
-        [path lineToPoint:NSMakePoint(roundf((i/gridWidth)*self.frame.size.width),h)];
+        [path moveToPoint:NSMakePoint(roundf((i/grid.width)*self.frame.size.width),0)];
+        [path lineToPoint:NSMakePoint(roundf((i/grid.width)*self.frame.size.width),h)];
         [path stroke];
     }
-    for(float i = 0; i < gridHeight; i++) {
+    for(float i = 0; i < grid.height; i++) {
         [[NSColor grayColor] set];
         NSBezierPath* path = [NSBezierPath bezierPath];
         [path setLineWidth:.5];
-        [path moveToPoint:NSMakePoint(0,roundf((i/gridHeight)*self.frame.size.height))];
-        [path lineToPoint:NSMakePoint(w,roundf((i/gridHeight)*self.frame.size.height))];
+        [path moveToPoint:NSMakePoint(0,roundf((i/grid.height)*self.frame.size.height))];
+        [path lineToPoint:NSMakePoint(w,roundf((i/grid.height)*self.frame.size.height))];
         [path stroke];
     }
     
     for(Robot* robot in robots) {
-        NSRect rect = NSMakeRect((robot.position.x/gridWidth)*w,(robot.position.y/gridHeight)*h,cellWidth, cellHeight);
+        NSRect rect = NSMakeRect((robot.position.x/grid.width)*w, (robot.position.y/grid.height)*h, cellWidth, cellHeight);
         NSBezierPath* path = [NSBezierPath bezierPathWithOvalInRect:rect];
         
         if(robot.carrying != nil){[[NSColor greenColor] set];}
@@ -71,8 +72,8 @@
         [path stroke];
         
         if (robot.recruitmentTarget.x > 0) {
-            float range = exponentialDecay(wirelessRange, robot.searchTime, team.informedSearchCorrelationDecayRate);
-            rect = NSMakeRect(((robot.position.x - range/2)/gridWidth)*w, ((robot.position.y - range/2)/gridHeight)*h, range*cellWidth, range*cellHeight);
+            float range = exponentialDecay(simulation.wirelessRange, robot.searchTime, team.informedSearchCorrelationDecayRate);
+            rect = NSMakeRect(((robot.position.x - range/2)/grid.width)*w, ((robot.position.y - range/2)/grid.height)*h, range*cellWidth, range*cellHeight);
             path = [NSBezierPath bezierPathWithOvalInRect:rect];
             [[NSColor colorWithCalibratedRed:0. green:.5 blue:1. alpha:1.] set];
             [path stroke];
@@ -81,7 +82,7 @@
 
     for(Tag* tag in tags) {
         if (![tag isKindOfClass:[NSNull class]]) {
-            NSRect rect = NSMakeRect(((float)tag.x/gridWidth)*w + (cellWidth*.25),((float)tag.y/gridHeight)*h + (cellWidth*.25),cellWidth*.5, cellHeight*.5);
+            NSRect rect = NSMakeRect(((float)tag.x/grid.width)*w + (cellWidth*.25),((float)tag.y/grid.height)*h + (cellWidth*.25),cellWidth*.5, cellHeight*.5);
             NSBezierPath* path = [NSBezierPath bezierPathWithOvalInRect:rect];
             
             if(tag.pickedUp){[[NSColor blackColor] set];}
@@ -98,8 +99,8 @@
         [[NSColor colorWithCalibratedRed:0. green:.6 blue:0. alpha:1.] set];
         NSBezierPath* path = [NSBezierPath bezierPath];
         [path setLineWidth:3*pheromone.n];
-        [path moveToPoint:NSMakePoint(nestX * cellWidth, nestY * cellHeight)];
-        [path lineToPoint:NSMakePoint(((float)pheromone.x/gridWidth)*w,((float)pheromone.y/gridHeight)*h)];
+        [path moveToPoint:NSMakePoint(simulation.nest.x * cellWidth, simulation.nest.y * cellHeight)];
+        [path lineToPoint:NSMakePoint(((float)pheromone.x/grid.width)*w,((float)pheromone.y/grid.height)*h)];
         [path stroke];
     }
 }
