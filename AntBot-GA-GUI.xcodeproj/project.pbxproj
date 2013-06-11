@@ -324,9 +324,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LIBRARY = "libstdc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AntBot-GA-GUI/AntBot-GA-GUI-Prefix.pch";
+				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = (
 					"\"$(OBJROOT)/UninstalledProducts/include\"",
 					"\"$(TARGET_BUILD_DIR)/usr/local/lib/include\"",
@@ -335,6 +337,7 @@
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
+					"-lstdc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/AntBot-GA\"";
@@ -346,9 +349,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LIBRARY = "libstdc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AntBot-GA-GUI/AntBot-GA-GUI-Prefix.pch";
+				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = (
 					"\"$(OBJROOT)/UninstalledProducts/include\"",
 					"\"$(TARGET_BUILD_DIR)/usr/local/lib/include\"",
@@ -357,6 +362,7 @@
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
+					"-lstdc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/AntBot-GA\"";
