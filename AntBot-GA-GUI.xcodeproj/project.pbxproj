@@ -11,7 +11,7 @@
 		407FC7DE16F1010F0051E770 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 407FC7D216F1010F0051E770 /* AppDelegate.m */; };
 		407FC7DF16F1010F0051E770 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 407FC7D416F1010F0051E770 /* Credits.rtf */; };
 		407FC7E116F1010F0051E770 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 407FC7D816F1010F0051E770 /* MainMenu.xib */; };
-		407FC7E316F1010F0051E770 /* SimulationView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 407FC7DC16F1010F0051E770 /* SimulationView.mm */; };
+		407FC7E316F1010F0051E770 /* SimulationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 407FC7DC16F1010F0051E770 /* SimulationView.m */; };
 		407FC7EF16F1019D0051E770 /* libAntBot-GA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 407FC7EC16F1018E0051E770 /* libAntBot-GA.a */; };
 		407FC7F416F1048C0051E770 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 407FC7F316F1048C0051E770 /* main.m */; };
 /* End PBXBuildFile section */
@@ -47,7 +47,7 @@
 		407FC7D716F1010F0051E770 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
 		407FC7D916F1010F0051E770 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = MainMenu.xib; sourceTree = "<group>"; };
 		407FC7DB16F1010F0051E770 /* SimulationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimulationView.h; sourceTree = "<group>"; };
-		407FC7DC16F1010F0051E770 /* SimulationView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SimulationView.mm; sourceTree = "<group>"; };
+		407FC7DC16F1010F0051E770 /* SimulationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimulationView.m; sourceTree = "<group>"; };
 		407FC7E416F1018E0051E770 /* AntBot-GA.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "AntBot-GA.xcodeproj"; path = "AntBot-GA/AntBot-GA.xcodeproj"; sourceTree = "<group>"; };
 		407FC7F316F1048C0051E770 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,7 +108,7 @@
 				407FC7D116F1010F0051E770 /* AppDelegate.h */,
 				407FC7D216F1010F0051E770 /* AppDelegate.m */,
 				407FC7DB16F1010F0051E770 /* SimulationView.h */,
-				407FC7DC16F1010F0051E770 /* SimulationView.mm */,
+				407FC7DC16F1010F0051E770 /* SimulationView.m */,
 				407FC7F216F102650051E770 /* Supporting Files */,
 			);
 			path = "AntBot-GA-GUI";
@@ -224,7 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				407FC7DE16F1010F0051E770 /* AppDelegate.m in Sources */,
-				407FC7E316F1010F0051E770 /* SimulationView.mm in Sources */,
+				407FC7E316F1010F0051E770 /* SimulationView.m in Sources */,
 				407FC7F416F1048C0051E770 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

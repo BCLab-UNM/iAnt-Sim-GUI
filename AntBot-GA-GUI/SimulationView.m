@@ -1,5 +1,4 @@
 #import "SimulationView.h"
-#import "AntBot-GA/GA.h"
 
 @implementation SimulationView
 
@@ -104,7 +103,7 @@
         [path lineToPoint:NSMakePoint(((float)pheromone.x/grid.width)*w,((float)pheromone.y/grid.height)*h)];
         [path stroke];
 //        float range = 10;
-//        NSRect rect = NSMakeRect(((pheromone.x - range/2)/gridWidth)*w, ((pheromone.y - range/2)/gridHeight)*h, range*cellWidth, range*cellHeight);
+//        NSRect rect = NSMakeRect(((pheromone.x - range/2)/grid.width)*w, ((pheromone.y - range/2)/grid.height)*h, range*cellWidth, range*cellHeight);
 //        path = [NSBezierPath bezierPathWithOvalInRect:rect];
 //        [[NSColor colorWithCalibratedRed:0. green:.5 blue:1. alpha:1.] set];
 //        [path stroke];

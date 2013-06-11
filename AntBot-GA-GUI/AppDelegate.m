@@ -1,5 +1,6 @@
 #import "AppDelegate.h"
 #import "SimulationView.h"
+#import "AntBot-GA/GA.h"
 
 NSString *FILE_PATH = @"~/Desktop";
 int NUM_ITERATIONS = 10;
@@ -33,7 +34,7 @@ int NUM_ITERATIONS = 10;
     
     [simulation setDecentralizedPheromones:FALSE];
     
-    [simulation setParameterFile:[NSString stringWithFormat:@"%@/parameters.csv",[FILE_PATH stringByExpandingTildeInPath]]];
+    //[simulation setParameterFile:[NSString stringWithFormat:@"%@/parameters.csv",[FILE_PATH stringByExpandingTildeInPath]]];
     
     [simulation setDelegate:self];
     [simulation setTickRate:.005f];
