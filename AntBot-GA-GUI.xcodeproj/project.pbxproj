@@ -14,6 +14,9 @@
 		407FC7E316F1010F0051E770 /* SimulationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 407FC7DC16F1010F0051E770 /* SimulationView.m */; };
 		407FC7EF16F1019D0051E770 /* libAntBot-GA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 407FC7EC16F1018E0051E770 /* libAntBot-GA.a */; };
 		407FC7F416F1048C0051E770 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 407FC7F316F1048C0051E770 /* main.m */; };
+		4239EAAA1767BB1F007F35EE /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4239EAA81767BB14007F35EE /* QTKit.framework */; };
+		4239EAAD1767BBC7007F35EE /* OpenCL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4239EAAB1767BBB8007F35EE /* OpenCL.framework */; };
+		4239EAAE1767BC1C007F35EE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4239EAA21767BAAC007F35EE /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		407FC7DC16F1010F0051E770 /* SimulationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimulationView.m; sourceTree = "<group>"; };
 		407FC7E416F1018E0051E770 /* AntBot-GA.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "AntBot-GA.xcodeproj"; path = "AntBot-GA/AntBot-GA.xcodeproj"; sourceTree = "<group>"; };
 		407FC7F316F1048C0051E770 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4239EAA21767BAAC007F35EE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4239EAA81767BB14007F35EE /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
+		4239EAAB1767BBB8007F35EE /* OpenCL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCL.framework; path = System/Library/Frameworks/OpenCL.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,9 @@
 			files = (
 				407FC7EF16F1019D0051E770 /* libAntBot-GA.a in Frameworks */,
 				407FC7B316F100D50051E770 /* Cocoa.framework in Frameworks */,
+				4239EAAD1767BBC7007F35EE /* OpenCL.framework in Frameworks */,
+				4239EAAE1767BC1C007F35EE /* QuartzCore.framework in Frameworks */,
+				4239EAAA1767BB1F007F35EE /* QTKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +96,9 @@
 			isa = PBXGroup;
 			children = (
 				407FC7B216F100D50051E770 /* Cocoa.framework */,
+				4239EAAB1767BBB8007F35EE /* OpenCL.framework */,
+				4239EAA81767BB14007F35EE /* QTKit.framework */,
+				4239EAA21767BAAC007F35EE /* QuartzCore.framework */,
 				407FC7B416F100D50051E770 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -223,9 +235,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				407FC7F416F1048C0051E770 /* main.m in Sources */,
 				407FC7DE16F1010F0051E770 /* AppDelegate.m in Sources */,
 				407FC7E316F1010F0051E770 /* SimulationView.m in Sources */,
-				407FC7F416F1048C0051E770 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,10 +341,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AntBot-GA-GUI/AntBot-GA-GUI-Prefix.pch";
 				GCC_VERSION = "";
-				HEADER_SEARCH_PATHS = (
-					"\"$(OBJROOT)/UninstalledProducts/include\"",
-					"\"$(TARGET_BUILD_DIR)/usr/local/lib/include\"",
-				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "AntBot-GA-GUI/AntBot-GA-GUI-Info.plist";
 				OTHER_LDFLAGS = (
 					"-all_load",
@@ -354,10 +363,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AntBot-GA-GUI/AntBot-GA-GUI-Prefix.pch";
 				GCC_VERSION = "";
-				HEADER_SEARCH_PATHS = (
-					"\"$(OBJROOT)/UninstalledProducts/include\"",
-					"\"$(TARGET_BUILD_DIR)/usr/local/lib/include\"",
-				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "AntBot-GA-GUI/AntBot-GA-GUI-Info.plist";
 				OTHER_LDFLAGS = (
 					"-all_load",
