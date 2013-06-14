@@ -17,6 +17,7 @@
 		4239EAAA1767BB1F007F35EE /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4239EAA81767BB14007F35EE /* QTKit.framework */; };
 		4239EAAD1767BBC7007F35EE /* OpenCL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4239EAAB1767BBB8007F35EE /* OpenCL.framework */; };
 		4239EAAE1767BC1C007F35EE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4239EAA21767BAAC007F35EE /* QuartzCore.framework */; };
+		42B5D82A176AD33A004CC97F /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B5D828176AD330004CC97F /* libc++.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		4239EAA21767BAAC007F35EE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4239EAA81767BB14007F35EE /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
 		4239EAAB1767BBB8007F35EE /* OpenCL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCL.framework; path = System/Library/Frameworks/OpenCL.framework; sourceTree = SDKROOT; };
+		42B5D828176AD330004CC97F /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42B5D82A176AD33A004CC97F /* libc++.dylib in Frameworks */,
 				407FC7EF16F1019D0051E770 /* libAntBot-GA.a in Frameworks */,
 				407FC7B316F100D50051E770 /* Cocoa.framework in Frameworks */,
 				4239EAAD1767BBC7007F35EE /* OpenCL.framework in Frameworks */,
@@ -150,6 +153,7 @@
 				407FC7D316F1010F0051E770 /* en.lproj */,
 				407FC7D016F1010F0051E770 /* AntBot-GA-GUI-Prefix.pch */,
 				407FC7CF16F1010F0051E770 /* AntBot-GA-GUI-Info.plist */,
+				42B5D828176AD330004CC97F /* libc++.dylib */,
 				407FC7F316F1048C0051E770 /* main.m */,
 			);
 			name = "Supporting Files";
