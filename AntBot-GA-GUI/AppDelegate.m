@@ -1,6 +1,4 @@
 #import "AppDelegate.h"
-#import "SimulationView.h"
-#import "AntBot-GA/GA.h"
 
 NSString *FILE_PATH = @"~/Desktop";
 int NUM_ITERATIONS = 10;

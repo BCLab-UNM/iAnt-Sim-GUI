@@ -1,6 +1,5 @@
-#import <Cocoa/Cocoa.h>
-
-@class SimulationView;
+#import "AntBot-GA/Sim.h"
+#import "SimulationView.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
