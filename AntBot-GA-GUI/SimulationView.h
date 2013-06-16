@@ -1,5 +1,5 @@
 #import <Cocoa/Cocoa.h>
-#import "AntBot-GA/GA.h"
+#import "AntBot-GA/Sim.h"
 
 @interface SimulationView : NSView {
     NSTimer* drawTimer;
