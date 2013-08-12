@@ -20,8 +20,8 @@ int NUM_ITERATIONS = 10;
     [simulation setEvaluationCount:1];
     [simulation setExploreTime:0];
     
-    [simulation setDistributionClustered:0.];
-    [simulation setDistributionPowerlaw:1.];
+    [simulation setDistributionClustered:1.];
+    [simulation setDistributionPowerlaw:0.];
     [simulation setDistributionRandom:0.];
     
     [simulation setRealWorldError:FALSE];
