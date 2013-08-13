@@ -20,8 +20,8 @@ int NUM_ITERATIONS = 10;
     [simulation setEvaluationCount:1];
     [simulation setExploreTime:0];
     
-    [simulation setDistributionClustered:1.];
-    [simulation setDistributionPowerlaw:0.];
+    [simulation setDistributionClustered:0.];
+    [simulation setDistributionPowerlaw:1.];
     [simulation setDistributionRandom:0.];
     
     [simulation setRealWorldError:FALSE];
@@ -32,7 +32,7 @@ int NUM_ITERATIONS = 10;
     
     [simulation setDecentralizedPheromones:FALSE];
     
-    NSString *parameterFilePath = [NSString stringWithFormat:@"%@/parameters.csv",[FILE_PATH stringByExpandingTildeInPath]];
+    NSString *parameterFilePath = [NSString stringWithFormat:@"%@/evolvedParameters.plist",[FILE_PATH stringByExpandingTildeInPath]];
     if ([[NSFileManager defaultManager] fileExistsAtPath:parameterFilePath]) {
         [simulation setParameterFile:parameterFilePath];
     }
