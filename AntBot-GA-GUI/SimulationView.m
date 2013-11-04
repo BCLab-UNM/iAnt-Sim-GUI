@@ -2,7 +2,7 @@
 
 @implementation SimulationView
 
-@synthesize simulation, robots, team, tags, pheromones;
+@synthesize simulation, robots, team, tags, pheromones, regions, clusters;
 
 -(void) awakeFromNib {
     [self translateOriginToPoint:NSMakePoint(0,0)];
@@ -117,13 +117,31 @@
 //        [[NSColor colorWithCalibratedRed:0. green:.5 blue:1. alpha:1.] set];
 //        [path stroke];
    }
+    
+    for(QuadTree* region in regions) {
+        [[NSColor redColor] set];
+        NSRect rect = NSMakeRect([region origin].x * cellWidth, [region origin].y * cellWidth, [region width] * cellWidth, [region height] * cellWidth);
+        NSBezierPath* path = [NSBezierPath bezierPathWithRect:rect];
+        [path setLineWidth:3];
+        [path stroke];
+    }
+    
+    for(Cluster* cluster in clusters) {
+        [[NSColor blueColor] set];
+        NSRect rect = NSMakeRect([cluster center].x * cellWidth, [cluster center].y * cellWidth, [cluster width] * cellWidth, [cluster height] * cellWidth);
+        NSBezierPath* path = [NSBezierPath bezierPathWithOvalInRect:rect];
+        [path setLineWidth:2];
+        [path stroke];
+    }
 }
 
--(void) updateDisplayWindowWithRobots:(NSMutableArray*)_robots team:(Team*)_team tags:(Array2D*)_tags pheromones:(NSMutableArray*)_pheromones {
+-(void) updateDisplayWindowWithRobots:(NSMutableArray*)_robots team:(Team*)_team tags:(Array2D*)_tags pheromones:(NSMutableArray*)_pheromones regions:(NSMutableArray*)_regions clusters:(NSMutableArray *)_clusters {
     robots = _robots;
     team = _team;
     tags = _tags;
     pheromones = _pheromones;
+    regions = _regions;
+    clusters = _clusters;
     [self redraw];
 }
 
