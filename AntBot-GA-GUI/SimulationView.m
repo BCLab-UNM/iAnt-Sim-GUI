@@ -120,7 +120,7 @@
     
     for(QuadTree* region in regions) {
         [[NSColor redColor] set];
-        NSRect rect = NSMakeRect([region origin].x * cellWidth, [region origin].y * cellWidth, [region width] * cellWidth, [region height] * cellWidth);
+        NSRect rect = NSMakeRect([region origin].x * cellWidth, [region origin].y * cellHeight, [region width] * cellWidth, [region height] * cellHeight);
         NSBezierPath* path = [NSBezierPath bezierPathWithRect:rect];
         [path setLineWidth:3];
         [path stroke];
@@ -128,7 +128,7 @@
     
     for(Cluster* cluster in clusters) {
         [[NSColor blueColor] set];
-        NSRect rect = NSMakeRect([cluster center].x * cellWidth, [cluster center].y * cellWidth, [cluster width] * cellWidth, [cluster height] * cellWidth);
+        NSRect rect = NSMakeRect(([cluster center].x - [cluster width]/2) * cellWidth, ([cluster center].y - [cluster height]/2) * cellHeight, [cluster width] * cellWidth, [cluster height] * cellHeight);
         NSBezierPath* path = [NSBezierPath bezierPathWithOvalInRect:rect];
         [path setLineWidth:2];
         [path stroke];
