@@ -18,13 +18,11 @@ int NUM_ITERATIONS = 10;
     [simulation setGenerationCount:100];
     [simulation setTagCount:256];
     [simulation setEvaluationCount:1];
-    [simulation setExploreTime:3600];
+    [simulation setExploreTime:0];
     
     [simulation setDistributionClustered:1.];
     [simulation setDistributionPowerlaw:0.];
     [simulation setDistributionRandom:0.];
-    
-    [simulation setRealWorldError:TRUE];
     
     [simulation setVariableStepSize:FALSE];
     [simulation setUniformDirection:FALSE];
