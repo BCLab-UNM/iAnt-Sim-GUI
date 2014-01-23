@@ -90,14 +90,21 @@
         
         for(Cell* cell in grid) {
             Tag* tag = [cell tag];
-            if (![tag isKindOfClass:[NSNull class]]) {
+            if (tag) {
                 NSRect rect = NSMakeRect(((float)[tag position].x/gridSize.width)*w + (cellWidth*.25),
                                          ((float)[tag position].y/gridSize.height)*h + (cellWidth*.25),cellWidth*.5, cellHeight*.5);
                 NSBezierPath* path = [NSBezierPath bezierPathWithOvalInRect:rect];
                 
-                if(tag.pickedUp){[[NSColor blackColor] set];}
-                else if([tag discovered]){[[NSColor magentaColor] set];}
-                else{[[NSColor whiteColor] set];}
+                if ([tag pickedUp]) {
+                    [[NSColor blackColor] set];
+                }
+                else if ([tag discovered]) {
+                    [[NSColor magentaColor] set];
+                }
+                else {
+                    [[NSColor whiteColor] set];
+                
+                }
                 [path setLineWidth:2];
                 [path fill];
                 [path setLineWidth:1];
