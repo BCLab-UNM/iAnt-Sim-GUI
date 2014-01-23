@@ -109,7 +109,7 @@
         for(Pheromone* pheromone in pheromones) {
             [[NSColor colorWithCalibratedRed:0. green:.6 blue:0. alpha:1.] set];
             NSBezierPath* path = [NSBezierPath bezierPath];
-            [path setLineWidth:3*pheromone.n];
+            [path setLineWidth:3 * [pheromone weight]];
             [path moveToPoint:NSMakePoint(simulation.nest.x * cellWidth, simulation.nest.y * cellHeight)];
             [path lineToPoint:NSMakePoint(((float)[pheromone position].x/gridSize.width)*w,((float)[pheromone position].y/gridSize.height)*h)];
             [path stroke];
