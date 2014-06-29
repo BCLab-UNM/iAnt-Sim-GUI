@@ -131,7 +131,7 @@
             [[NSColor redColor] set];
             NSRect rect = NSMakeRect([region origin].x * cellWidth, [region origin].y * cellHeight, [region width] * cellWidth, [region height] * cellHeight);
             NSBezierPath* path = [NSBezierPath bezierPathWithRect:rect];
-            [path setLineWidth:3];
+            [path setLineWidth:1];
             [path stroke];
         }
         
