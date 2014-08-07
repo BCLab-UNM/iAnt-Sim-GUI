@@ -13,12 +13,12 @@ int NUM_ITERATIONS = 10;
     
     [simView setSimulation:simulation];
     
-    [simulation setRobotCount:3];
+    [simulation setRobotCount:6];
     [simulation setTeamCount:100];
     [simulation setGenerationCount:100];
     [simulation setTagCount:256];
     [simulation setEvaluationCount:1];
-    [simulation setExploreTime:1200];
+    [simulation setExploreTime:600];
     
     [simulation setDistributionClustered:1.];
     [simulation setDistributionPowerlaw:0.];
@@ -36,7 +36,7 @@ int NUM_ITERATIONS = 10;
     }
     
     [simulation setDelegate:self];
-    [simulation setTickRate:.001f];
+    [simulation setTickRate:.005f];
     [simulation setViewDelegate:(NSObject*)simView];
     
     dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
