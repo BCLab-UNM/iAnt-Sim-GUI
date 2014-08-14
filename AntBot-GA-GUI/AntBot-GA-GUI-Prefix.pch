@@ -5,3 +5,7 @@
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
 #endif
+
+#ifdef __cplusplus
+    #import <opencv2/opencv.hpp>
+#endif
