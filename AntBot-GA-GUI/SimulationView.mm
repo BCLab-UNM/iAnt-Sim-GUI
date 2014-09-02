@@ -80,14 +80,6 @@ using namespace std;
             [path fill];
             [[NSColor whiteColor] set];
             [path stroke];
-            
-            if ([robot recruitmentTarget].x > 0) {
-                float range = [simulation wirelessRange];
-                rect = NSMakeRect(((robot.position.x - range/2)/gridSize.width)*w, ((robot.position.y - range/2)/gridSize.height)*h, range*cellWidth, range*cellHeight);
-                path = [NSBezierPath bezierPathWithOvalInRect:rect];
-                [[NSColor colorWithCalibratedRed:0. green:.5 blue:1. alpha:1.] set];
-                [path stroke];
-            }
         }
         
         for(vector<Cell*> v : grid) {
@@ -118,22 +110,12 @@ using namespace std;
         }
         
         for(Pheromone* pheromone in pheromones) {
-            if ([simulation decentralizedPheromones]) {
-                float range = 10;
-                NSRect rect = NSMakeRect((([pheromone position].x - (range / 2.)) / gridSize.width) * w, (([pheromone position].y - (range / 2.)) / gridSize.height) * h,
-                                         range*cellWidth, range*cellHeight);
-                path = [NSBezierPath bezierPathWithOvalInRect:rect];
-                [[NSColor colorWithCalibratedRed:0. green:.5 blue:1. alpha:1.] set];
-                [path stroke];
-            }
-            else {
-                [[NSColor colorWithCalibratedRed:0. green:.6 blue:0. alpha:1.] set];
-                NSBezierPath* path = [NSBezierPath bezierPath];
-                [path setLineWidth:3 * [pheromone weight]];
-                [path moveToPoint:NSMakePoint(simulation.nest.x * cellWidth, simulation.nest.y * cellHeight)];
-                [path lineToPoint:NSMakePoint(((float)[pheromone position].x / gridSize.width) * w,((float)[pheromone position].y /gridSize.height) * h)];
-                [path stroke];
-            }
+            [[NSColor colorWithCalibratedRed:0. green:.6 blue:0. alpha:1.] set];
+            NSBezierPath* path = [NSBezierPath bezierPath];
+            [path setLineWidth:3 * [pheromone weight]];
+            [path moveToPoint:NSMakePoint(simulation.nest.x * cellWidth, simulation.nest.y * cellHeight)];
+            [path lineToPoint:NSMakePoint(((float)[pheromone position].x / gridSize.width) * w,((float)[pheromone position].y /gridSize.height) * h)];
+            [path stroke];
         }
         
         for(QuadTree* region in regions) {

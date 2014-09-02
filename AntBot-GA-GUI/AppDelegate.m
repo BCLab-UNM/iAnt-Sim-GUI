@@ -24,12 +24,6 @@ int NUM_ITERATIONS = 10;
     [simulation setDistributionPowerlaw:0.];
     [simulation setDistributionRandom:0.];
     
-    [simulation setVariableStepSize:FALSE];
-    [simulation setUniformDirection:FALSE];
-    [simulation setAdaptiveWalk:TRUE];
-    
-    [simulation setDecentralizedPheromones:FALSE];
-    
     NSString *parameterFilePath = [NSString stringWithFormat:@"%@/evolvedParameters.plist",[FILE_PATH stringByExpandingTildeInPath]];
     if ([[NSFileManager defaultManager] fileExistsAtPath:parameterFilePath]) {
         [simulation setParameterFile:parameterFilePath];
