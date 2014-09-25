@@ -2,6 +2,8 @@
 
 @implementation SimulationView
 
+using namespace std;
+
 @synthesize simulation, robots, team, grid, pheromones, regions, clusters;
 
 -(void) awakeFromNib {
@@ -78,38 +80,32 @@
             [path fill];
             [[NSColor whiteColor] set];
             [path stroke];
-            
-            if ([robot recruitmentTarget].x > 0) {
-                float range = [simulation wirelessRange];
-                rect = NSMakeRect(((robot.position.x - range/2)/gridSize.width)*w, ((robot.position.y - range/2)/gridSize.height)*h, range*cellWidth, range*cellHeight);
-                path = [NSBezierPath bezierPathWithOvalInRect:rect];
-                [[NSColor colorWithCalibratedRed:0. green:.5 blue:1. alpha:1.] set];
-                [path stroke];
-            }
         }
         
-        for(Cell* cell in grid) {
-            Tag* tag = [cell tag];
-            if (tag) {
-                NSRect rect = NSMakeRect(((float)[tag position].x/gridSize.width)*w + (cellWidth*.25),
-                                         ((float)[tag position].y/gridSize.height)*h + (cellWidth*.25),cellWidth*.5, cellHeight*.5);
-                NSBezierPath* path = [NSBezierPath bezierPathWithOvalInRect:rect];
-                
-                if ([tag pickedUp]) {
-                    [[NSColor blackColor] set];
+        for(vector<Cell*> v : grid) {
+            for(Cell* cell : v) {
+                Tag* tag = [cell tag];
+                if (tag) {
+                    NSRect rect = NSMakeRect(((float)[tag position].x/gridSize.width)*w + (cellWidth*.25),
+                                             ((float)[tag position].y/gridSize.height)*h + (cellWidth*.25),cellWidth*.5, cellHeight*.5);
+                    NSBezierPath* path = [NSBezierPath bezierPathWithOvalInRect:rect];
+                    
+                    if ([tag pickedUp]) {
+                        [[NSColor blackColor] set];
+                    }
+                    else if ([tag discovered]) {
+                        [[NSColor magentaColor] set];
+                    }
+                    else {
+                        [[NSColor whiteColor] set];
+                    
+                    }
+                    [path setLineWidth:2];
+                    [path fill];
+                    [path setLineWidth:1];
+                    [[NSColor darkGrayColor] set];
+                    [path stroke];
                 }
-                else if ([tag discovered]) {
-                    [[NSColor magentaColor] set];
-                }
-                else {
-                    [[NSColor whiteColor] set];
-                
-                }
-                [path setLineWidth:2];
-                [path fill];
-                [path setLineWidth:1];
-                [[NSColor darkGrayColor] set];
-                [path stroke];
             }
         }
         
@@ -118,20 +114,16 @@
             NSBezierPath* path = [NSBezierPath bezierPath];
             [path setLineWidth:3 * [pheromone weight]];
             [path moveToPoint:NSMakePoint(simulation.nest.x * cellWidth, simulation.nest.y * cellHeight)];
-            [path lineToPoint:NSMakePoint(((float)[pheromone position].x/gridSize.width)*w,((float)[pheromone position].y/gridSize.height)*h)];
+            [path lineToPoint:NSMakePoint(((float)[pheromone position].x / gridSize.width) * w,((float)[pheromone position].y /gridSize.height) * h)];
             [path stroke];
-            //        float range = 10;
-            //        NSRect rect = NSMakeRect(((pheromone.x - range/2)/grid.width)*w, ((pheromone.y - range/2)/grid.height)*h, range*cellWidth, range*cellHeight);
-            //        path = [NSBezierPath bezierPathWithOvalInRect:rect];
-            //        [[NSColor colorWithCalibratedRed:0. green:.5 blue:1. alpha:1.] set];
-            //        [path stroke];
         }
         
         for(QuadTree* region in regions) {
             [[NSColor redColor] set];
-            NSRect rect = NSMakeRect([region origin].x * cellWidth, [region origin].y * cellHeight, [region width] * cellWidth, [region height] * cellHeight);
+            NSRect rect = NSMakeRect([region shape].origin.x * cellWidth, [region shape].origin.y * cellHeight,
+                                     [region shape].size.width * cellWidth, [region shape].size.height * cellHeight);
             NSBezierPath* path = [NSBezierPath bezierPathWithRect:rect];
-            [path setLineWidth:3];
+            [path setLineWidth:1];
             [path stroke];
         }
         
@@ -145,7 +137,7 @@
     }
 }
 
--(void) updateDisplayWindowWithRobots:(NSMutableArray*)_robots team:(Team*)_team grid:(Array2D*)_grid pheromones:(NSMutableArray*)_pheromones regions:(NSMutableArray*)_regions clusters:(NSMutableArray *)_clusters {
+-(void) updateDisplayWindowWithRobots:(NSMutableArray*)_robots team:(Team*)_team grid:(vector<vector<Cell*>>)_grid pheromones:(NSMutableArray*)_pheromones regions:(NSMutableArray*)_regions clusters:(NSMutableArray *)_clusters {
     robots = _robots;
     team = _team;
     grid = _grid;
