@@ -44,22 +44,22 @@ using namespace std;
         [[NSColor whiteColor] set];
         [path stroke];
         
-        for(float i = 0; i < gridSize.width; i++) {
-            [[NSColor grayColor] set];
-            NSBezierPath* path = [NSBezierPath bezierPath];
-            [path setLineWidth:.5];
-            [path moveToPoint:NSMakePoint(roundf((i/gridSize.width)*self.frame.size.width),0)];
-            [path lineToPoint:NSMakePoint(roundf((i/gridSize.width)*self.frame.size.width),h)];
-            [path stroke];
-        }
-        for(float i = 0; i < gridSize.height; i++) {
-            [[NSColor grayColor] set];
-            NSBezierPath* path = [NSBezierPath bezierPath];
-            [path setLineWidth:.5];
-            [path moveToPoint:NSMakePoint(0,roundf((i/gridSize.height)*self.frame.size.height))];
-            [path lineToPoint:NSMakePoint(w,roundf((i/gridSize.height)*self.frame.size.height))];
-            [path stroke];
-        }
+//        for(float i = 0; i < gridSize.width; i++) {
+//            [[NSColor grayColor] set];
+//            NSBezierPath* path = [NSBezierPath bezierPath];
+//            [path setLineWidth:.5];
+//            [path moveToPoint:NSMakePoint(roundf((i/gridSize.width)*self.frame.size.width),0)];
+//            [path lineToPoint:NSMakePoint(roundf((i/gridSize.width)*self.frame.size.width),h)];
+//            [path stroke];
+//        }
+//        for(float i = 0; i < gridSize.height; i++) {
+//            [[NSColor grayColor] set];
+//            NSBezierPath* path = [NSBezierPath bezierPath];
+//            [path setLineWidth:.5];
+//            [path moveToPoint:NSMakePoint(0,roundf((i/gridSize.height)*self.frame.size.height))];
+//            [path lineToPoint:NSMakePoint(w,roundf((i/gridSize.height)*self.frame.size.height))];
+//            [path stroke];
+//        }
         
         for(Robot* robot in robots) {
             NSRect rect = NSMakeRect((robot.position.x/gridSize.width)*w, (robot.position.y/gridSize.height)*h, cellWidth, cellHeight);
@@ -106,7 +106,19 @@ using namespace std;
                     [[NSColor darkGrayColor] set];
                     [path stroke];
                 }
+                Obstacle* obstacle = [cell obstacle];
+                if (obstacle) {
+                    NSRect rect = NSMakeRect(((float)[obstacle position].x/gridSize.width)*w + (cellWidth*.25),
+                                             ((float)[obstacle position].y/gridSize.height)*h + (cellWidth*.25),cellWidth*.5, cellHeight*.5);
+                    NSBezierPath* path = [NSBezierPath bezierPathWithOvalInRect:rect];
+                    [[NSColor whiteColor] set];
+                    [path setLineWidth:2];
+                    [path fill];
+                    [path setLineWidth:1];
+                    [path stroke];
+                }
             }
+            
         }
         
         for(Pheromone* pheromone in pheromones) {
