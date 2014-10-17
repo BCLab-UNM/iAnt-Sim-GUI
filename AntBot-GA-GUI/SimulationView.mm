@@ -111,10 +111,10 @@ using namespace std;
                     NSRect rect = NSMakeRect(((float)[obstacle position].x/gridSize.width)*w + (cellWidth*.25),
                                              ((float)[obstacle position].y/gridSize.height)*h + (cellWidth*.25),cellWidth*.5, cellHeight*.5);
                     NSBezierPath* path = [NSBezierPath bezierPathWithOvalInRect:rect];
-                    [[NSColor whiteColor] set];
-                    [path setLineWidth:2];
+                    [[NSColor brownColor] set];
+                    [path setLineWidth:3];
                     [path fill];
-                    [path setLineWidth:1];
+                    [path setLineWidth:3];
                     [path stroke];
                 }
             }

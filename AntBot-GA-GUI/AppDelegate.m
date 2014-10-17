@@ -13,7 +13,7 @@ int NUM_ITERATIONS = 10;
     
     [simView setSimulation:simulation];
     
-    [simulation setRobotCount:10];
+    [simulation setRobotCount:1];
     [simulation setTeamCount:1];
     [simulation setGenerationCount:10];
     [simulation setTagCount:256];
