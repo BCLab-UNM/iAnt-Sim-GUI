@@ -28,8 +28,8 @@ using namespace std;
         float w = self.frame.size.width,
         h = self.frame.size.height;
         NSSize gridSize = simulation.gridSize;
-        float cellWidth = (1./gridSize.width) * w,
-        cellHeight = (1./gridSize.height) * h;
+        float cellWidth = w / gridSize.width,
+        cellHeight = h /gridSize.height;
         
         //Clear background.
         [[NSColor blackColor] set];
@@ -113,8 +113,8 @@ using namespace std;
             [[NSColor colorWithCalibratedRed:0. green:.6 blue:0. alpha:1.] set];
             NSBezierPath* path = [NSBezierPath bezierPath];
             [path setLineWidth:3 * [pheromone weight]];
-            [path moveToPoint:NSMakePoint(simulation.nest.x * cellWidth, simulation.nest.y * cellHeight)];
-            [path lineToPoint:NSMakePoint(((float)[pheromone position].x / gridSize.width) * w,((float)[pheromone position].y /gridSize.height) * h)];
+            [path moveToPoint:NSMakePoint(simulation.nest.x * cellWidth + (cellWidth / 2), simulation.nest.y * cellHeight + (cellHeight / 2))];
+            [path lineToPoint:NSMakePoint([pheromone position].x * cellWidth + (cellWidth / 2), [pheromone position].y * cellHeight + (cellHeight / 2))];
             [path stroke];
         }
         
