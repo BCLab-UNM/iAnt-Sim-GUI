@@ -4,7 +4,7 @@
 
 using namespace std;
 
-@synthesize simulation, robots, team, grid, pheromones, regions, clusters;
+@synthesize simulation, robots, team, grid, pheromones, clusters;
 
 -(void) awakeFromNib {
     [self translateOriginToPoint:NSMakePoint(0,0)];
@@ -118,15 +118,6 @@ using namespace std;
             [path stroke];
         }
         
-        for(QuadTree* region in regions) {
-            [[NSColor redColor] set];
-            NSRect rect = NSMakeRect([region shape].origin.x * cellWidth, [region shape].origin.y * cellHeight,
-                                     [region shape].size.width * cellWidth, [region shape].size.height * cellHeight);
-            NSBezierPath* path = [NSBezierPath bezierPathWithRect:rect];
-            [path setLineWidth:1];
-            [path stroke];
-        }
-        
         for(Cluster* cluster in clusters) {
             [[NSColor blueColor] set];
             NSRect rect = NSMakeRect(([cluster center].x - [cluster width]/2) * cellWidth, ([cluster center].y - [cluster height]/2) * cellHeight, [cluster width] * cellWidth, [cluster height] * cellHeight);
@@ -137,12 +128,11 @@ using namespace std;
     }
 }
 
--(void) updateDisplayWindowWithRobots:(NSMutableArray*)_robots team:(Team*)_team grid:(vector<vector<Cell*>>)_grid pheromones:(NSMutableArray*)_pheromones regions:(NSMutableArray*)_regions clusters:(NSMutableArray *)_clusters {
+-(void) updateDisplayWindowWithRobots:(NSMutableArray*)_robots team:(Team*)_team grid:(vector<vector<Cell*>>)_grid pheromones:(NSMutableArray*)_pheromones clusters:(NSMutableArray *)_clusters {
     robots = _robots;
     team = _team;
     grid = _grid;
     pheromones = _pheromones;
-    regions = _regions;
     clusters = _clusters;
     [self redraw];
 }
