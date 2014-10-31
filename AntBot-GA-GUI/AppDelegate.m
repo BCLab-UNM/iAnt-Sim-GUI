@@ -18,8 +18,7 @@ int NUM_ITERATIONS = 10;
     [simulation setGenerationCount:50];
     [simulation setTagCount:256];
     [simulation setEvaluationCount:1];
-    [simulation setExploreTime:0];
-    [simulation setClusteringTagCutoff:[simulation tagCount]];
+    [simulation setClusteringTagCutoff:-1];
     
     [simulation setDistributionClustered:1.];
     [simulation setDistributionPowerlaw:0.];

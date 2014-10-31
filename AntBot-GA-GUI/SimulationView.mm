@@ -4,7 +4,7 @@
 
 using namespace std;
 
-@synthesize simulation, robots, team, grid, pheromones, regions, clusters;
+@synthesize simulation, robots, team, grid, pheromones, clusters;
 
 -(void) awakeFromNib {
     [self translateOriginToPoint:NSMakePoint(0,0)];
@@ -28,8 +28,8 @@ using namespace std;
         float w = self.frame.size.width,
         h = self.frame.size.height;
         NSSize gridSize = simulation.gridSize;
-        float cellWidth = (1./gridSize.width) * w,
-        cellHeight = (1./gridSize.height) * h;
+        float cellWidth = w / gridSize.width,
+        cellHeight = h /gridSize.height;
         
         //Clear background.
         [[NSColor blackColor] set];
@@ -109,17 +109,8 @@ using namespace std;
             [[NSColor colorWithCalibratedRed:0. green:.6 blue:0. alpha:1.] set];
             NSBezierPath* path = [NSBezierPath bezierPath];
             [path setLineWidth:3 * [pheromone weight]];
-            [path moveToPoint:NSMakePoint(simulation.nest.x * cellWidth, simulation.nest.y * cellHeight)];
-            [path lineToPoint:NSMakePoint(((float)[pheromone position].x / gridSize.width) * w,((float)[pheromone position].y /gridSize.height) * h)];
-            [path stroke];
-        }
-        
-        for(QuadTree* region in regions) {
-            [[NSColor redColor] set];
-            NSRect rect = NSMakeRect([region shape].origin.x * cellWidth, [region shape].origin.y * cellHeight,
-                                     [region shape].size.width * cellWidth, [region shape].size.height * cellHeight);
-            NSBezierPath* path = [NSBezierPath bezierPathWithRect:rect];
-            [path setLineWidth:1];
+            [path moveToPoint:NSMakePoint(simulation.nest.x * cellWidth + (cellWidth / 2), simulation.nest.y * cellHeight + (cellHeight / 2))];
+            [path lineToPoint:NSMakePoint([pheromone position].x * cellWidth + (cellWidth / 2), [pheromone position].y * cellHeight + (cellHeight / 2))];
             [path stroke];
         }
         
@@ -133,12 +124,11 @@ using namespace std;
     }
 }
 
--(void) updateDisplayWindowWithRobots:(NSMutableArray*)_robots team:(Team*)_team grid:(vector<vector<Cell*>>)_grid pheromones:(NSMutableArray*)_pheromones regions:(NSMutableArray*)_regions clusters:(NSMutableArray *)_clusters {
+-(void) updateDisplayWindowWithRobots:(NSMutableArray*)_robots team:(Team*)_team grid:(vector<vector<Cell*>>)_grid pheromones:(NSMutableArray*)_pheromones clusters:(NSMutableArray *)_clusters {
     robots = _robots;
     team = _team;
     grid = _grid;
     pheromones = _pheromones;
-    regions = _regions;
     clusters = _clusters;
     [self redraw];
 }
