@@ -14,8 +14,8 @@ int NUM_ITERATIONS = 10;
     [simView setSimulation:simulation];
     
     [simulation setRobotCount:6];
-    [simulation setTeamCount:100];
-    [simulation setGenerationCount:100];
+    [simulation setTeamCount:1];
+    [simulation setGenerationCount:50];
     [simulation setTagCount:256];
     [simulation setEvaluationCount:1];
     [simulation setClusteringTagCutoff:-1];
