@@ -81,13 +81,13 @@ using namespace std;
                         [[NSColor magentaColor] set];
                     }
                     else {
-                        [[NSColor whiteColor] set];
+                        [[NSColor lightGrayColor] set];
                     
                     }
                     [path setLineWidth:3];
                     [path fill];
                     //[path setLineWidth:3];
-                    [[NSColor darkGrayColor] set];
+                    //[[NSColor darkGrayColor] set];
                     [path stroke];
                 }
                 Obstacle* obstacle = [cell obstacle];
