@@ -52,10 +52,10 @@ using namespace std;
                 [[NSColor greenColor] set];
             }
             else if(robot.status == ROBOT_STATUS_DEPARTING) {
-                [[NSColor redColor] set];
+                [[NSColor cyanColor] set];
             }
             else if(robot.status == ROBOT_STATUS_SEARCHING) {
-                [[NSColor purpleColor] set];
+                [[NSColor magentaColor] set];
             }
             else if(robot.status == ROBOT_STATUS_RETURNING) {
                 [[NSColor orangeColor] set];
@@ -78,7 +78,7 @@ using namespace std;
                         [[NSColor blackColor] set];
                     }
                     else if ([tag discovered]) {
-                        [[NSColor magentaColor] set];
+                        [[NSColor lightGrayColor] set];
                     }
                     else {
                         [[NSColor lightGrayColor] set];
