@@ -113,8 +113,20 @@ using namespace std;
             [[NSColor colorWithCalibratedRed:0. green:.6 blue:0. alpha:1.] set];
             NSBezierPath* path = [NSBezierPath bezierPath];
             [path setLineWidth:3 * [pheromone weight]];
-            [path moveToPoint:NSMakePoint(simulation.nest.x * cellWidth + (cellWidth / 2), simulation.nest.y * cellHeight + (cellHeight / 2))];
-            [path lineToPoint:NSMakePoint([pheromone position].x * cellWidth + (cellWidth / 2), [pheromone position].y * cellHeight + (cellHeight / 2))];
+            int pointCount = (int)[[pheromone path] count];
+            if(pointCount >= 2) {
+                for(int i = 0; i < pointCount; i++) {
+                    float x = [[[pheromone path] objectAtIndex:i] pointValue].x * cellWidth + (cellWidth / 2);
+                    float y = [[[pheromone path] objectAtIndex:i] pointValue].y * cellHeight + (cellHeight / 2);
+                    
+                    if(i == 0) {
+                        [path moveToPoint:NSMakePoint(x, y)];
+                    }
+                    else {
+                        [path lineToPoint:NSMakePoint(x, y)];
+                    }
+                }
+            }
             [path stroke];
         }
         
