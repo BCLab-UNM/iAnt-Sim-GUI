@@ -44,23 +44,6 @@ using namespace std;
         [[NSColor whiteColor] set];
         [path stroke];
         
-        for(float i = 0; i < gridSize.width; i++) {
-            [[NSColor grayColor] set];
-            NSBezierPath* path = [NSBezierPath bezierPath];
-            [path setLineWidth:.5];
-            [path moveToPoint:NSMakePoint(roundf((i/gridSize.width)*self.frame.size.width),0)];
-            [path lineToPoint:NSMakePoint(roundf((i/gridSize.width)*self.frame.size.width),h)];
-            [path stroke];
-        }
-        for(float i = 0; i < gridSize.height; i++) {
-            [[NSColor grayColor] set];
-            NSBezierPath* path = [NSBezierPath bezierPath];
-            [path setLineWidth:.5];
-            [path moveToPoint:NSMakePoint(0,roundf((i/gridSize.height)*self.frame.size.height))];
-            [path lineToPoint:NSMakePoint(w,roundf((i/gridSize.height)*self.frame.size.height))];
-            [path stroke];
-        }
-        
         for(Robot* robot in robots) {
             NSRect rect = NSMakeRect((robot.position.x/gridSize.width)*w, (robot.position.y/gridSize.height)*h, cellWidth, cellHeight);
             NSBezierPath* path = [NSBezierPath bezierPathWithOvalInRect:rect];
@@ -69,16 +52,17 @@ using namespace std;
                 [[NSColor greenColor] set];
             }
             else if(robot.status == ROBOT_STATUS_DEPARTING) {
-                [[NSColor redColor] set];
+                [[NSColor cyanColor] set];
             }
             else if(robot.status == ROBOT_STATUS_SEARCHING) {
-                [[NSColor purpleColor] set];
+                [[NSColor magentaColor] set];
             }
             else if(robot.status == ROBOT_STATUS_RETURNING) {
                 [[NSColor orangeColor] set];
             }
+            [path setLineWidth:3];
             [path fill];
-            [[NSColor whiteColor] set];
+            //[[NSColor whiteColor] set];
             [path stroke];
         }
         
@@ -94,25 +78,38 @@ using namespace std;
                         [[NSColor blackColor] set];
                     }
                     else if ([tag discovered]) {
-                        [[NSColor magentaColor] set];
+                        [[NSColor lightGrayColor] set];
                     }
                     else {
-                        [[NSColor whiteColor] set];
-                    
+                        [[NSColor lightGrayColor] set];
+                        
                     }
-                    [path setLineWidth:2];
+                    [path setLineWidth:3];
                     [path fill];
-                    [path setLineWidth:1];
-                    [[NSColor darkGrayColor] set];
+                    //[path setLineWidth:3];
+                    //[[NSColor darkGrayColor] set];
+                    [path stroke];
+                }
+                Obstacle* obstacle = [cell obstacle];
+                if (obstacle) {
+                    NSRect rect = NSMakeRect(((float)[obstacle position].x/gridSize.width)*w + (cellWidth*.25),
+                                             ((float)[obstacle position].y/gridSize.height)*h + (cellWidth*.25),cellWidth*.5, cellHeight*.5);
+                    NSBezierPath* path = [NSBezierPath bezierPathWithOvalInRect:rect];
+                    [[NSColor brownColor] set];
+                    [path setLineWidth:3];
+                    [path fill];
+                    //[path setLineWidth:3];
                     [path stroke];
                 }
             }
+            
         }
         
         for(Pheromone* pheromone in pheromones) {
             [[NSColor colorWithCalibratedRed:0. green:.6 blue:0. alpha:1.] set];
             NSBezierPath* path = [NSBezierPath bezierPath];
             [path setLineWidth:3 * [pheromone weight]];
+            
             int pointCount = (int)[[pheromone path] count];
             if(pointCount >= 2) {
                 for(int i = 0; i < pointCount; i++) {
@@ -127,6 +124,7 @@ using namespace std;
                     }
                 }
             }
+            
             [path stroke];
         }
         
