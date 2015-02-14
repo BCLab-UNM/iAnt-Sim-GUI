@@ -82,7 +82,6 @@ using namespace std;
                     }
                     else {
                         [[NSColor lightGrayColor] set];
-                        
                     }
                     [path setLineWidth:3];
                     [path fill];
@@ -124,7 +123,7 @@ using namespace std;
                     }
                 }
             }
-            
+
             [path stroke];
         }
         
