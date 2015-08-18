@@ -8,58 +8,60 @@
 
 /* Begin PBXBuildFile section */
 		407FC7B316F100D50051E770 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407FC7B216F100D50051E770 /* Cocoa.framework */; };
-		407FC7DE16F1010F0051E770 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 407FC7D216F1010F0051E770 /* AppDelegate.m */; };
-		407FC7DF16F1010F0051E770 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 407FC7D416F1010F0051E770 /* Credits.rtf */; };
-		407FC7E116F1010F0051E770 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 407FC7D816F1010F0051E770 /* MainMenu.xib */; };
-		407FC7E316F1010F0051E770 /* SimulationView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 407FC7DC16F1010F0051E770 /* SimulationView.mm */; };
-		407FC7EF16F1019D0051E770 /* libAntBot-GA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 407FC7EC16F1018E0051E770 /* libAntBot-GA.a */; };
-		407FC7F416F1048C0051E770 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 407FC7F316F1048C0051E770 /* main.m */; };
-		421969FF199D602500113B3F /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 421969FE199D602500113B3F /* libstdc++.6.0.9.dylib */; };
+		422B7A7C1B839D4600C6AD16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 422B7A701B839D4600C6AD16 /* AppDelegate.m */; };
+		422B7A7D1B839D4600C6AD16 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 422B7A711B839D4600C6AD16 /* Credits.rtf */; };
+		422B7A7F1B839D4600C6AD16 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 422B7A751B839D4600C6AD16 /* MainMenu.xib */; };
+		422B7A811B839D4600C6AD16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 422B7A791B839D4600C6AD16 /* main.m */; };
+		422B7A821B839D4600C6AD16 /* SimulationView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 422B7A7B1B839D4600C6AD16 /* SimulationView.mm */; };
+		422B7AF61B839EFC00C6AD16 /* libiAnt-Sim.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 422B7AF21B839E2600C6AD16 /* libiAnt-Sim.a */; };
+		422B7AFC1B839F2400C6AD16 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 422B7AFB1B839F2400C6AD16 /* libc++.dylib */; };
+		422B7AFE1B839F2D00C6AD16 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 422B7AFD1B839F2D00C6AD16 /* libstdc++.6.0.9.dylib */; };
 		4239EAAA1767BB1F007F35EE /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4239EAA81767BB14007F35EE /* QTKit.framework */; };
 		4239EAAD1767BBC7007F35EE /* OpenCL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4239EAAB1767BBB8007F35EE /* OpenCL.framework */; };
 		4239EAAE1767BC1C007F35EE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4239EAA21767BAAC007F35EE /* QuartzCore.framework */; };
-		42B5D82A176AD33A004CC97F /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B5D828176AD330004CC97F /* libc++.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		407FC7EB16F1018E0051E770 /* PBXContainerItemProxy */ = {
+		422B7AF11B839E2600C6AD16 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 407FC7E416F1018E0051E770 /* AntBot-GA.xcodeproj */;
+			containerPortal = 422B7AED1B839E2600C6AD16 /* iAnt-Sim.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 40ED65B616DABD31006F8494;
-			remoteInfo = "AntBot-GA";
+			remoteInfo = "iAnt-Sim";
 		};
-		407FC7ED16F101980051E770 /* PBXContainerItemProxy */ = {
+		422B7AF41B839EF100C6AD16 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 407FC7E416F1018E0051E770 /* AntBot-GA.xcodeproj */;
+			containerPortal = 422B7AED1B839E2600C6AD16 /* iAnt-Sim.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 40ED65B516DABD31006F8494;
-			remoteInfo = "AntBot-GA";
+			remoteInfo = "iAnt-Sim";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		407FC7AE16F100D50051E770 /* AntBot-GA-GUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AntBot-GA-GUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		407FC7AE16F100D50051E770 /* iAnt-Sim-GUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iAnt-Sim-GUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		407FC7B216F100D50051E770 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		407FC7B516F100D50051E770 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		407FC7B616F100D50051E770 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		407FC7B716F100D50051E770 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		407FC7CF16F1010F0051E770 /* AntBot-GA-GUI-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AntBot-GA-GUI-Info.plist"; sourceTree = "<group>"; };
-		407FC7D016F1010F0051E770 /* AntBot-GA-GUI-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AntBot-GA-GUI-Prefix.pch"; sourceTree = "<group>"; };
-		407FC7D116F1010F0051E770 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		407FC7D216F1010F0051E770 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		407FC7D516F1010F0051E770 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = Credits.rtf; sourceTree = "<group>"; };
-		407FC7D716F1010F0051E770 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
-		407FC7D916F1010F0051E770 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = MainMenu.xib; sourceTree = "<group>"; };
-		407FC7DB16F1010F0051E770 /* SimulationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimulationView.h; sourceTree = "<group>"; };
-		407FC7DC16F1010F0051E770 /* SimulationView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SimulationView.mm; sourceTree = "<group>"; };
-		407FC7E416F1018E0051E770 /* AntBot-GA.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "AntBot-GA.xcodeproj"; path = "AntBot-GA/AntBot-GA.xcodeproj"; sourceTree = "<group>"; };
-		407FC7F316F1048C0051E770 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		421969FE199D602500113B3F /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
+		422B7A6F1B839D4600C6AD16 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		422B7A701B839D4600C6AD16 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		422B7A721B839D4600C6AD16 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		422B7A741B839D4600C6AD16 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		422B7A761B839D4600C6AD16 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		422B7A771B839D4600C6AD16 /* iAnt-Sim-GUI-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iAnt-Sim-GUI-Info.plist"; sourceTree = "<group>"; };
+		422B7A781B839D4600C6AD16 /* iAnt-Sim-GUI-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iAnt-Sim-GUI-Prefix.pch"; sourceTree = "<group>"; };
+		422B7A791B839D4600C6AD16 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		422B7A7A1B839D4600C6AD16 /* SimulationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimulationView.h; sourceTree = "<group>"; };
+		422B7A7B1B839D4600C6AD16 /* SimulationView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SimulationView.mm; sourceTree = "<group>"; };
+		422B7AED1B839E2600C6AD16 /* iAnt-Sim.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "iAnt-Sim.xcodeproj"; path = "iAnt-Sim/iAnt-Sim.xcodeproj"; sourceTree = "<group>"; };
+		422B7AF71B839F0700C6AD16 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		422B7AF91B839F1000C6AD16 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
+		422B7AFB1B839F2400C6AD16 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		422B7AFD1B839F2D00C6AD16 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 		4239EAA21767BAAC007F35EE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4239EAA81767BB14007F35EE /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
 		4239EAAB1767BBB8007F35EE /* OpenCL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCL.framework; path = System/Library/Frameworks/OpenCL.framework; sourceTree = SDKROOT; };
-		42B5D828176AD330004CC97F /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,12 +69,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				421969FF199D602500113B3F /* libstdc++.6.0.9.dylib in Frameworks */,
-				42B5D82A176AD33A004CC97F /* libc++.dylib in Frameworks */,
-				407FC7EF16F1019D0051E770 /* libAntBot-GA.a in Frameworks */,
+				422B7AF61B839EFC00C6AD16 /* libiAnt-Sim.a in Frameworks */,
 				407FC7B316F100D50051E770 /* Cocoa.framework in Frameworks */,
+				422B7AFE1B839F2D00C6AD16 /* libstdc++.6.0.9.dylib in Frameworks */,
 				4239EAAD1767BBC7007F35EE /* OpenCL.framework in Frameworks */,
 				4239EAAE1767BC1C007F35EE /* QuartzCore.framework in Frameworks */,
+				422B7AFC1B839F2400C6AD16 /* libc++.dylib in Frameworks */,
 				4239EAAA1767BB1F007F35EE /* QTKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,8 +85,8 @@
 		407FC7A316F100D50051E770 = {
 			isa = PBXGroup;
 			children = (
-				407FC7E416F1018E0051E770 /* AntBot-GA.xcodeproj */,
-				407FC7B816F100D50051E770 /* AntBot-GA-GUI */,
+				422B7AED1B839E2600C6AD16 /* iAnt-Sim.xcodeproj */,
+				422B7A6E1B839D4600C6AD16 /* iAnt-Sim-GUI */,
 				407FC7B116F100D50051E770 /* Frameworks */,
 				407FC7AF16F100D50051E770 /* Products */,
 			);
@@ -93,7 +95,7 @@
 		407FC7AF16F100D50051E770 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				407FC7AE16F100D50051E770 /* AntBot-GA-GUI.app */,
+				407FC7AE16F100D50051E770 /* iAnt-Sim-GUI.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,6 +103,8 @@
 		407FC7B116F100D50051E770 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				422B7AF91B839F1000C6AD16 /* libstdc++.6.0.9.dylib */,
+				422B7AF71B839F0700C6AD16 /* libc++.dylib */,
 				407FC7B216F100D50051E770 /* Cocoa.framework */,
 				4239EAAB1767BBB8007F35EE /* OpenCL.framework */,
 				4239EAA81767BB14007F35EE /* QTKit.framework */,
@@ -120,55 +124,55 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		407FC7B816F100D50051E770 /* AntBot-GA-GUI */ = {
+		422B7A6E1B839D4600C6AD16 /* iAnt-Sim-GUI */ = {
 			isa = PBXGroup;
 			children = (
-				407FC7D116F1010F0051E770 /* AppDelegate.h */,
-				407FC7D216F1010F0051E770 /* AppDelegate.m */,
-				407FC7DB16F1010F0051E770 /* SimulationView.h */,
-				407FC7DC16F1010F0051E770 /* SimulationView.mm */,
-				407FC7F216F102650051E770 /* Supporting Files */,
+				422B7A6F1B839D4600C6AD16 /* AppDelegate.h */,
+				422B7A701B839D4600C6AD16 /* AppDelegate.m */,
+				422B7A7A1B839D4600C6AD16 /* SimulationView.h */,
+				422B7A7B1B839D4600C6AD16 /* SimulationView.mm */,
+				422B7A851B839D8800C6AD16 /* Supporting Files */,
 			);
-			path = "AntBot-GA-GUI";
+			path = "iAnt-Sim-GUI";
 			sourceTree = "<group>";
 		};
-		407FC7D316F1010F0051E770 /* en.lproj */ = {
+		422B7A851B839D8800C6AD16 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				407FC7D416F1010F0051E770 /* Credits.rtf */,
-				407FC7D616F1010F0051E770 /* InfoPlist.strings */,
-				407FC7D816F1010F0051E770 /* MainMenu.xib */,
-			);
-			path = en.lproj;
-			sourceTree = "<group>";
-		};
-		407FC7E516F1018E0051E770 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				407FC7EC16F1018E0051E770 /* libAntBot-GA.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		407FC7F216F102650051E770 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				407FC7D316F1010F0051E770 /* en.lproj */,
-				407FC7D016F1010F0051E770 /* AntBot-GA-GUI-Prefix.pch */,
-				407FC7CF16F1010F0051E770 /* AntBot-GA-GUI-Info.plist */,
-				42B5D828176AD330004CC97F /* libc++.dylib */,
-				421969FE199D602500113B3F /* libstdc++.6.0.9.dylib */,
-				407FC7F316F1048C0051E770 /* main.m */,
+				422B7A861B839DA100C6AD16 /* en.lproj */,
+				422B7A781B839D4600C6AD16 /* iAnt-Sim-GUI-Prefix.pch */,
+				422B7A771B839D4600C6AD16 /* iAnt-Sim-GUI-Info.plist */,
+				422B7AFB1B839F2400C6AD16 /* libc++.dylib */,
+				422B7AFD1B839F2D00C6AD16 /* libstdc++.6.0.9.dylib */,
+				422B7A791B839D4600C6AD16 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		422B7A861B839DA100C6AD16 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				422B7A711B839D4600C6AD16 /* Credits.rtf */,
+				422B7A731B839D4600C6AD16 /* InfoPlist.strings */,
+				422B7A751B839D4600C6AD16 /* MainMenu.xib */,
+			);
+			name = en.lproj;
+			sourceTree = "<group>";
+		};
+		422B7AEE1B839E2600C6AD16 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				422B7AF21B839E2600C6AD16 /* libiAnt-Sim.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		407FC7AD16F100D50051E770 /* AntBot-GA-GUI */ = {
+		407FC7AD16F100D50051E770 /* iAnt-Sim-GUI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 407FC7CC16F100D50051E770 /* Build configuration list for PBXNativeTarget "AntBot-GA-GUI" */;
+			buildConfigurationList = 407FC7CC16F100D50051E770 /* Build configuration list for PBXNativeTarget "iAnt-Sim-GUI" */;
 			buildPhases = (
 				407FC7AA16F100D50051E770 /* Sources */,
 				407FC7AB16F100D50051E770 /* Frameworks */,
@@ -177,11 +181,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				407FC7EE16F101980051E770 /* PBXTargetDependency */,
+				422B7AF51B839EF100C6AD16 /* PBXTargetDependency */,
 			);
-			name = "AntBot-GA-GUI";
+			name = "iAnt-Sim-GUI";
 			productName = "AntBot-GA-GUI";
-			productReference = 407FC7AE16F100D50051E770 /* AntBot-GA-GUI.app */;
+			productReference = 407FC7AE16F100D50051E770 /* iAnt-Sim-GUI.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -193,7 +197,7 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = AntBot;
 			};
-			buildConfigurationList = 407FC7A816F100D50051E770 /* Build configuration list for PBXProject "AntBot-GA-GUI" */;
+			buildConfigurationList = 407FC7A816F100D50051E770 /* Build configuration list for PBXProject "iAnt-Sim-GUI" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -205,23 +209,23 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 407FC7E516F1018E0051E770 /* Products */;
-					ProjectRef = 407FC7E416F1018E0051E770 /* AntBot-GA.xcodeproj */;
+					ProductGroup = 422B7AEE1B839E2600C6AD16 /* Products */;
+					ProjectRef = 422B7AED1B839E2600C6AD16 /* iAnt-Sim.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
-				407FC7AD16F100D50051E770 /* AntBot-GA-GUI */,
+				407FC7AD16F100D50051E770 /* iAnt-Sim-GUI */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		407FC7EC16F1018E0051E770 /* libAntBot-GA.a */ = {
+		422B7AF21B839E2600C6AD16 /* libiAnt-Sim.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = "libAntBot-GA.a";
-			remoteRef = 407FC7EB16F1018E0051E770 /* PBXContainerItemProxy */;
+			path = "libiAnt-Sim.a";
+			remoteRef = 422B7AF11B839E2600C6AD16 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -231,8 +235,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				407FC7DF16F1010F0051E770 /* Credits.rtf in Resources */,
-				407FC7E116F1010F0051E770 /* MainMenu.xib in Resources */,
+				422B7A7D1B839D4600C6AD16 /* Credits.rtf in Resources */,
+				422B7A7F1B839D4600C6AD16 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,43 +247,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				407FC7F416F1048C0051E770 /* main.m in Sources */,
-				407FC7DE16F1010F0051E770 /* AppDelegate.m in Sources */,
-				407FC7E316F1010F0051E770 /* SimulationView.mm in Sources */,
+				422B7A811B839D4600C6AD16 /* main.m in Sources */,
+				422B7A821B839D4600C6AD16 /* SimulationView.mm in Sources */,
+				422B7A7C1B839D4600C6AD16 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		407FC7EE16F101980051E770 /* PBXTargetDependency */ = {
+		422B7AF51B839EF100C6AD16 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "AntBot-GA";
-			targetProxy = 407FC7ED16F101980051E770 /* PBXContainerItemProxy */;
+			name = "iAnt-Sim";
+			targetProxy = 422B7AF41B839EF100C6AD16 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		407FC7D416F1010F0051E770 /* Credits.rtf */ = {
+		422B7A711B839D4600C6AD16 /* Credits.rtf */ = {
 			isa = PBXVariantGroup;
 			children = (
-				407FC7D516F1010F0051E770 /* en */,
+				422B7A721B839D4600C6AD16 /* en */,
 			);
 			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
-		407FC7D616F1010F0051E770 /* InfoPlist.strings */ = {
+		422B7A731B839D4600C6AD16 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				407FC7D716F1010F0051E770 /* en */,
+				422B7A741B839D4600C6AD16 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		407FC7D816F1010F0051E770 /* MainMenu.xib */ = {
+		422B7A751B839D4600C6AD16 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				407FC7D916F1010F0051E770 /* en */,
+				422B7A761B839D4600C6AD16 /* en */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -349,19 +353,22 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AntBot-GA-GUI/AntBot-GA-GUI-Prefix.pch";
+				GCC_PREFIX_HEADER = "iAnt-Sim-GUI/iAnt-Sim-GUI-Prefix.pch";
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_VERSION = "";
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/AntBot-GA/AntBot-GA/OpenCV/include\"";
-				INFOPLIST_FILE = "AntBot-GA-GUI/AntBot-GA-GUI-Info.plist";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/AntBot-GA/AntBot-GA/OpenCV/lib\"";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/iAnt-Sim/iAnt-Sim/OpenCV/include\"";
+				INFOPLIST_FILE = "iAnt-Sim-GUI/iAnt-Sim-GUI-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SRCROOT)/iAnt-Sim/iAnt-Sim/OpenCV/lib\"",
+					"$(PROJECT_DIR)/iAnt-Sim/iAnt-Sim/OpenCV/lib",
+				);
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 					"-lstdc++",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/AntBot-GA\"";
+				PRODUCT_NAME = "iAnt-Sim-GUI";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/iAnt-Sim\"";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -374,19 +381,22 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AntBot-GA-GUI/AntBot-GA-GUI-Prefix.pch";
+				GCC_PREFIX_HEADER = "iAnt-Sim-GUI/iAnt-Sim-GUI-Prefix.pch";
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_VERSION = "";
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/AntBot-GA/AntBot-GA/OpenCV/include\"";
-				INFOPLIST_FILE = "AntBot-GA-GUI/AntBot-GA-GUI-Info.plist";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/AntBot-GA/AntBot-GA/OpenCV/lib\"";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/iAnt-Sim/iAnt-Sim/OpenCV/include\"";
+				INFOPLIST_FILE = "iAnt-Sim-GUI/iAnt-Sim-GUI-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SRCROOT)/iAnt-Sim/iAnt-Sim/OpenCV/lib\"",
+					"$(PROJECT_DIR)/iAnt-Sim/iAnt-Sim/OpenCV/lib",
+				);
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 					"-lstdc++",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/AntBot-GA\"";
+				PRODUCT_NAME = "iAnt-Sim-GUI";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/iAnt-Sim\"";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -394,7 +404,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		407FC7A816F100D50051E770 /* Build configuration list for PBXProject "AntBot-GA-GUI" */ = {
+		407FC7A816F100D50051E770 /* Build configuration list for PBXProject "iAnt-Sim-GUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				407FC7CA16F100D50051E770 /* Debug */,
@@ -403,7 +413,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		407FC7CC16F100D50051E770 /* Build configuration list for PBXNativeTarget "AntBot-GA-GUI" */ = {
+		407FC7CC16F100D50051E770 /* Build configuration list for PBXNativeTarget "iAnt-Sim-GUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				407FC7CD16F100D50051E770 /* Debug */,

@@ -1,4 +1,4 @@
-#import "AntBot-GA/Sim.h"
+#import "iAnt-Sim/Sim.h"
 #import "SimulationView.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
