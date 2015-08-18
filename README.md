@@ -1,4 +1,4 @@
-AntBot-GA-GUI
+iAnt-GA-GUI
 =============
 
-Visualization for the AntBot genetic algorithm.
+Visualization engine for iAnt-Sim
