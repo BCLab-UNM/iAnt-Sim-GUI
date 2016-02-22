@@ -12,7 +12,7 @@ int NUM_ITERATIONS = 10;
     Simulation* simulation = [[Simulation alloc] init];
     
     [simView setSimulation:simulation];
-    
+/*
     [simulation setRobotCount:6];
     [simulation setTeamCount:100];
     [simulation setGenerationCount:100];
@@ -23,7 +23,7 @@ int NUM_ITERATIONS = 10;
     [simulation setDistributionClustered:1.];
     [simulation setDistributionPowerlaw:0.];
     [simulation setDistributionRandom:0.];
-    
+*/    
     NSString *parameterFilePath = [NSString stringWithFormat:@"%@/evolvedParameters.plist",[FILE_PATH stringByExpandingTildeInPath]];
     if ([[NSFileManager defaultManager] fileExistsAtPath:parameterFilePath]) {
         [simulation setParameterFile:parameterFilePath];

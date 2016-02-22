@@ -102,9 +102,9 @@ using namespace std;
                     }
                     [path setLineWidth:2];
                     [path fill];
-                    [path setLineWidth:1];
-                    [[NSColor darkGrayColor] set];
-                    [path stroke];
+//                    [path setLineWidth:1];
+//                    [[NSColor darkGrayColor] set];
+//                    [path stroke];
                 }
             }
         }
